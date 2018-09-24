@@ -1,8 +1,6 @@
 # import Query from 'api/graphql/schema/root/query.graphql'
 # import Mutation from 'api/graphql/schema/root/mutation.graphql'
 
-# import DateTime from 'api/graphql/schema/scalar/date-time.graphql'
-
 type Schema {
   query:    Query!
   mutation: Mutation!
