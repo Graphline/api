@@ -1,0 +1,53 @@
+# Crud
+type Permission {
+  # Crud
+  id:    ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User! @relation(name: "PermissionCreator")
+  updatedBy: User! @relation(name: "PermissionUpdater")
+  display:   String!
+
+  value: String! @unique
+}
+
+# Crud
+type PermissionLevel {
+  # Crud
+  id:    ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User! @relation(name: "PermissionLevelCreator")
+  updatedBy: User! @relation(name: "PermissionLevelUpdater")
+  display:   String!
+
+  children: [PermissionLevel!]! @relation(name: "PermissionLevelChildren")
+  parents:  [PermissionLevel!]! @relation(name: "PermissionLevelParents")
+
+  permissions: [Permission!]!
+}
+
+# Crud
+type Role {
+  # Crud
+  id:          ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User! @relation(name: "RoleCreator")
+  updatedBy: User! @relation(name: "RoleUpdater")
+  display:   String! @unique
+
+  permissionLevel: PermissionLevel!
+}
+
+# Managed
+type User {
+  # Managed
+  id: ID!  @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  display: String! @default(value: "Anonymous")
+
+  roles:   [Role!]! @relation(name: "UserRoles")
+  entries: [Entry!]! @relation(name: "UserEntries")
+}

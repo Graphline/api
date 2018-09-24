@@ -1,0 +1,10 @@
+endpoint: http://localhost:4466
+datamodel:
+  - prisma/users.prisma
+  - prisma/content.prisma
+
+secret: please-change-me
+
+hooks:
+  post-deploy:
+    - prisma generate

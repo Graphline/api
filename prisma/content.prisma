@@ -1,0 +1,43 @@
+# Crud
+type Slug {
+  # Crud
+  id:    ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User! @relation(name: "SlugCreator")
+  updatedBy: User! @relation(name: "SlugUpdater")
+  display:   String!
+
+  value: String! @unique
+}
+
+# Crud & Routable
+type Entry {
+  # Crud
+  id:       ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User! @relation(name: "EntryCreator")
+  updatedBy: User! @relation(name: "EntryUpdater")
+  display:   String!
+
+  # Routable
+  slug:     Slug! @unique
+
+  categories: [Category!]!
+  isPublic:   Boolean! @default(value: "false")
+}
+
+# Crud & Routable
+type Category {
+  # Crud
+  id:      ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User! @relation(name: "CategoryCreator")
+  updatedBy: User! @relation(name: "CategoryUpdater")
+  display:   String!
+
+  # Routable
+  slug:    Slug! @unique
+}

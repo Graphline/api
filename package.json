@@ -49,6 +49,7 @@
     "markdown-it-link-attributes": "^2.0.0",
     "markdown-loader": "^3.0.0",
     "nodemon-webpack-plugin": "^3.0.1",
+    "prisma": "^1.17.0-beta.30",
     "webpack": "^4.16.5",
     "webpack-command": "^0.4.1",
     "webpack-import-glob": "^2.0.0",
