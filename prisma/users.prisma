@@ -1,7 +1,7 @@
 # Crud
 type Permission {
   # Crud
-  id:    ID! @unique
+  id:        ID! @unique
   createdAt: DateTime!
   updatedAt: DateTime!
   createdBy: User! @relation(name: "PermissionCreator")
@@ -14,7 +14,7 @@ type Permission {
 # Crud
 type PermissionLevel {
   # Crud
-  id:    ID! @unique
+  id:        ID! @unique
   createdAt: DateTime!
   updatedAt: DateTime!
   createdBy: User! @relation(name: "PermissionLevelCreator")
@@ -30,7 +30,7 @@ type PermissionLevel {
 # Crud
 type Role {
   # Crud
-  id:          ID! @unique
+  id:        ID! @unique
   createdAt: DateTime!
   updatedAt: DateTime!
   createdBy: User! @relation(name: "RoleCreator")
@@ -40,14 +40,31 @@ type Role {
   permissionLevel: PermissionLevel!
 }
 
+# Crud
+type Session {
+  # Crud
+  id:        ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User! @relation(name: "SessionCreator")
+  updatedBy: User! @relation(name: "SessionUpdater")
+  display:   String! @unique
+
+  expiresAt: DateTime!
+  ip:        String!
+  ua:        String!
+  token:     String!
+}
+
 # Managed
 type User {
   # Managed
-  id: ID!  @unique
+  id:        ID!  @unique
   createdAt: DateTime!
   updatedAt: DateTime!
-  display: String! @default(value: "Anonymous")
+  display:   String! @default(value: "Anonymous")
 
-  roles:   [Role!]! @relation(name: "UserRoles")
-  entries: [Entry!]! @relation(name: "UserEntries")
+  roles:    [Role!]! @relation(name: "UserRoles")
+  entries:  [Entry!]! @relation(name: "UserEntries")
+  sessions: [Session!]! @relation(name: "UserSessions")
 }
