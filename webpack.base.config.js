@@ -84,10 +84,6 @@ const config = {
         'loader': require.resolve('graphql-import-loader'),
       },
       {
-        'test':   /\.json$/,
-        'loader': require.resolve('json-loader'),
-      },
-      {
         'test':    /\.js$/,
         'loader':  require.resolve('webpack-import-glob'),
         'enforce': 'pre',

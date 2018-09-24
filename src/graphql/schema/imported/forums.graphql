@@ -1,9 +1,0 @@
-"""
-Latest announcement topics wrapped from https://forums.openusercss.org
-"""
-type Topic {
-  title:   String!
-  url:     String!
-  created: String!
-  author:  String!
-}

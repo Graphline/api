@@ -2,6 +2,7 @@ secrets.json
 bkup.*
 /screenshots
 /licenses.json
+/logs
 
 /app/static/
 

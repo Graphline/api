@@ -1,5 +1,3 @@
 interface Node {
   id: ID!
-
-  _id: ID! @deprecated(reason: "Use id (without underscore)!")
 }

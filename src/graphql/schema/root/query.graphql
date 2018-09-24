@@ -12,20 +12,11 @@
 
 type Query {
   viewer: User
-
   version: Version!
-  licenses: [License!]!
-  sessions: [Session]!
 
-  forumTopics(category: Int!): [Topic]!
-  theme(id: ID!): Theme
   user(id: ID!): User
 
   search(
     input: SearchInput!
   ): SearchResults!
-
-  themeList(
-    input: ThemeListInput
-  ): [Theme]!
 }

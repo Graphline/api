@@ -1,11 +1,23 @@
-import secure from 'lib/express/secure'
-import routes from 'api/lib/routes'
-import cors from 'api/lib/cors'
+import express from 'express'
+import http from 'http'
+import routes from '~/express/routes'
+import cors from 'lib/cors'
+import {log,} from 'lib/logger'
 
-export const handler = async ({app, config, mode,}) => {
-  await secure({app, config, mode,})
-  await cors({app, config, mode,})
-  await routes({app, config, mode,})
+let server = null
 
-  return {app,}
+const init = async () => {
+  log.info('beginning startup')
+
+  const app = express()
+
+  await cors({app,})
+  await routes({app,})
+
+  server = http.createServer(app)
+  server.listen(process.env.PORT)
+
+  log.info('startup complete')
 }
+
+init().catch(log.error)
