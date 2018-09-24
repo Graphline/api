@@ -1,0 +1,6 @@
+input SortInput {
+  createdAt: Int
+  updatedAt: Int
+  display:   Int
+  ratings:   Int
+}

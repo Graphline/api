@@ -1,0 +1,84 @@
+# import Crud from '../interface/crud.graphql'
+# import Managed from '../interface/managed.graphql'
+# import Node from '../interface/node.graphql'
+#
+# import Stats from '../imported/stats.graphql'
+# import {Rating} from './rating.graphql'
+#
+# import {SortInput} from '../simple/sort.graphql'
+# import URL from '../scalar/url.graphql'
+
+type ThemeVairableOption {
+  name:  String!
+  label: String!
+  value: String!
+}
+
+type ThemeVariable {
+  type:    String!
+  label:   String!
+  name:    String!
+  value:   String
+  default: String!
+  options: [ThemeVairableOption!]
+}
+
+type ThemeRating {
+  value: Int!
+  count: Int!
+}
+
+type Theme implements Crud & Managed & Node {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User!
+  updatedBy: User!
+  display:   String!
+
+  description: String!
+  content:     String!
+  version:     String!
+  screenshots: [URL]!
+  license:     String!
+  variables:   [ThemeVariable]!
+  stats:       Stats!
+  rating:      ThemeRating!
+
+  _id: ID! @deprecated(reason: "Use id (without underscore)!")
+  user: User! @deprecated(reason: "Use createdBy!")
+  lastUpdate: DateTime! @deprecated(reason: "Use updatedAt!")
+  title: String! @deprecated(reason: "Use display!")
+}
+
+input ThemeListInput {
+  sort:  SortInput
+  limit: Int
+  skip:  Int
+}
+
+input ThemeVariableOptionInput {
+  name:  String!
+  label: String!
+  value: String!
+}
+
+input ThemeVariableInput {
+  type:    String!
+  label:   String!
+  name:    String!
+  value:   String
+  default: String!
+  options: [ThemeVariableOptionInput!]
+}
+
+input ThemeInput {
+  id:          ID
+  display:     String!
+  description: String!
+  content:     String!
+  version:     String!
+  screenshots: [URL]!
+  variables:   [ThemeVariableInput]!
+  license:     String!
+}

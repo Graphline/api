@@ -1,0 +1,10 @@
+"""
+A Node that implements Managed has the necessary fields to be seen as an internal
+object.
+The API creates, edits and deletes these as a result of user interaction.
+"""
+interface Managed {
+  id:        ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}

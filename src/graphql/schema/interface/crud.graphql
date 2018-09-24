@@ -1,0 +1,12 @@
+"""
+A Node that implements Crud has the necessary fields to be seen as a standalone item.
+Users can create, edit and delete these.
+"""
+interface Crud {
+  id:        ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User!
+  updatedBy: User!
+  display:   String!
+}

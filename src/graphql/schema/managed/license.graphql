@@ -1,0 +1,7 @@
+type License {
+  package:    String
+  repository: String
+  license:    String
+  source:     String
+  sourceText: String
+}
