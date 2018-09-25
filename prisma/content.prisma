@@ -11,7 +11,7 @@ type Slug {
   value: String! @unique
 }
 
-# Crud & Routable
+# Crud & Routable & Publishable
 type Entry {
   # Crud
   id:       ID! @unique
@@ -22,10 +22,14 @@ type Entry {
   display:   String!
 
   # Routable
-  slug:     Slug! @unique
+  slug: Slug! @unique
 
-  categories: [Category!]!
-  isPublic:   Boolean! @default(value: "false")
+  # Publishable
+  published:   Boolean! @default(value: "false")
+  publishedAt: DateTime!
+  publishedBy: User! @relation(name: "EntryPublisher")
+
+  categories: [Category!]! @relation(name: "EntryCategories")
 }
 
 # Crud & Routable
@@ -39,5 +43,7 @@ type Category {
   display:   String!
 
   # Routable
-  slug:    Slug! @unique
+  slug: Slug! @unique
+
+  entries: [Entry!]! @relation(name: "CategoryEntries")
 }
