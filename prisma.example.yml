@@ -5,6 +5,10 @@ datamodel:
 
 secret: please-change-me
 
+generate:
+  - generator: javascript-client
+    output: ./prisma/client
+
 hooks:
   post-deploy:
     - prisma generate
