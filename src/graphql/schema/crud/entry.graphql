@@ -1,0 +1,18 @@
+# import Routable from '../interface/routable.graphql'
+# import Publishable from '../interface/publishable.graphql'
+# import Crud from '../interface/crud.graphql'
+
+type Entry implements Crud & Routable & Publishable {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User!
+  updatedBy: User!
+  display:   String!
+
+  slug: Slug!
+
+  published:   Boolean!
+  publishedAt: DateTime!
+  publishedBy: User!
+}

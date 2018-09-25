@@ -1,0 +1,12 @@
+# import Managed from '../interface/managed.graphql'
+
+type Session implements Managed {
+  id:        ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  expiresAt: DateTime!
+  ip:        String!
+  ua:        String!
+  token:     String!
+}

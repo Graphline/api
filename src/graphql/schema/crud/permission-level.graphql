@@ -1,0 +1,15 @@
+# import Crud from '../interface/crud.graphql'
+
+type PermissionLevel implements Crud {
+  id:        ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User!
+  updatedBy: User!
+  display:   String!
+
+  children: [PermissionLevel]!
+  parents:  [PermissionLevel]!
+
+  permissions: [Permission]!
+}

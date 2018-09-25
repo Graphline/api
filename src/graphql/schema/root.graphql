@@ -1,6 +1,17 @@
 # import Query from 'src/graphql/schema/root/query.graphql'
 # import Mutation from 'src/graphql/schema/root/mutation.graphql'
 # import Subscription from 'src/graphql/schema/root/subscription.graphql'
+#
+# import DateTime from 'src/graphql/schema/scalar/date-time.graphql'
+#
+# import {Slug} from 'src/graphql/schema/crud/slug.graphql'
+# import {Entry} from 'src/graphql/schema/crud/entry.graphql'
+# import {Role} from 'src/graphql/schema/crud/role.graphql'
+# import {PermissionLevel} from 'src/graphql/schema/crud/permission-level.graphql'
+# import {Permission} from 'src/graphql/schema/crud/permission.graphql'
+#
+# import {Session} from 'src/graphql/schema/managed/session.graphql'
+# import {User} from 'src/graphql/schema/managed/user.graphql'
 
 type Schema {
   query:        Query!

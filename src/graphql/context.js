@@ -1,9 +1,8 @@
-import schema from '~/graphql'
-import MatomoApi from 'matomo-reporting-js'
 import fetch from 'node-fetch'
 import {Agent,} from 'https'
-import client from '@/prisma/client'
+import MatomoApi from 'matomo-reporting-js'
 
+import {prisma,} from '@/prisma/client'
 import {log,} from 'lib/logger'
 
 const agent = new Agent({
@@ -21,12 +20,10 @@ const matomo = new MatomoApi({
   'idSite':   parseInt(process.env.MATOMO_SITE_ID, 10),
 })
 
-export default (req, res, next) => ({
-  'tracing': process.env.NODE_ENV === 'development',
-  'context': {
+export default ({req,}) => {
+  return {
     matomo,
     req,
-    client,
-  },
-  schema,
-})
+    prisma,
+  }
+}

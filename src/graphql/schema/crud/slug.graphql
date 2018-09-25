@@ -1,0 +1,12 @@
+# import Crud from '../interface/crud.graphql'
+
+type Slug {
+  id:        ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User!
+  updatedBy: User!
+  display:   String!
+
+  value: String!
+}

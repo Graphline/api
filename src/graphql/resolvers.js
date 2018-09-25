@@ -1,3 +1,7 @@
+import {
+  DateTime,
+} from '@okgrow/graphql-scalars'
+
 import fields from './fields/**/*.js'
 import mutations from './mutations/**/*.js'
 import subscriptions from './subscriptions/**/*.js'
@@ -38,6 +42,8 @@ subscriptions.forEach((item) => {
 })
 
 export default {
+  DateTime,
+
   ...Fields,
   Query,
   Mutation,

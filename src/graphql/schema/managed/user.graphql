@@ -1,0 +1,12 @@
+# import Managed from '../interface/managed.graphql'
+
+type User implements Managed {
+  id:        ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  display:   String!
+
+  roles:    [Role]!
+  entries:  [Entry]!
+  sessions: [Session]!
+}

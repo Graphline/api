@@ -1,0 +1,10 @@
+"""
+A Node that implements Publishable can be items that are generally meant for public consumption.
+Users can create, edit and delete these.
+"""
+interface Publishable {
+  id:          ID!
+  published:   Boolean!
+  publishedAt: DateTime!
+  publishedBy: User!
+}
