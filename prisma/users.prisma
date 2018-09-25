@@ -38,18 +38,18 @@ type Role {
   display:   String! @unique
 
   permissionLevel: PermissionLevel!
+
+  users: [User!]! @relation(name: "UserRoles")
 }
 
-# Crud
+# Managed
 type Session {
-  # Crud
+  # Managed
   id:        ID! @unique
   createdAt: DateTime!
   updatedAt: DateTime!
-  createdBy: User! @relation(name: "SessionCreator")
-  updatedBy: User! @relation(name: "SessionUpdater")
-  display:   String! @unique
 
+  user:      User! @relation(name: "UserSessions")
   expiresAt: DateTime!
   ip:        String!
   ua:        String!
@@ -65,6 +65,26 @@ type User {
   display:   String! @default(value: "Anonymous")
 
   roles:    [Role!]! @relation(name: "UserRoles")
-  entries:  [Entry!]! @relation(name: "UserEntries")
+  # entries:  [Entry!]! @relation(name: "UserEntries")
   sessions: [Session!]! @relation(name: "UserSessions")
+
+  # Relations
+  createdPermissions: [Permission!]! @relation(name: "PermissionCreator")
+  updatedPermissions: [Permission!]! @relation(name: "PermissionUpdater")
+
+  createdPermissionLevels: [PermissionLevel!]! @relation(name: "PermissionLevelCreator")
+  updatedPermissionLevels: [PermissionLevel!]! @relation(name: "PermissionLevelUpdater")
+
+  createdRoles: [Role!]! @relation(name: "RoleCreator")
+  updatedRoles: [Role!]! @relation(name: "RoleUpdater")
+
+  createdEntries:   [Entry!]! @relation(name: "EntryCreator")
+  updatedEntries:   [Entry!]! @relation(name: "EntryUpdater")
+  publishedEntries: [Entry!]! @relation(name: "EntryPublisher")
+
+  createdSlugs: [Slug!]! @relation(name: "SlugCreator")
+  updatedSlugs: [Slug!]! @relation(name: "SlugUpdater")
+
+  createdCategories: [Category!]! @relation(name: "CategoryCreator")
+  updatedCategories: [Category!]! @relation(name: "CategoryUpdater")
 }
