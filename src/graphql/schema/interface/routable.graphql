@@ -1,0 +1,8 @@
+"""
+A Node that implements Routable can be items that receive props from the URL as slugs.
+Users can create, edit and delete these.
+"""
+interface Routable {
+  id:   ID!
+  slug: Slug!
+}

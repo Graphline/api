@@ -1,15 +1,26 @@
-import {graphqlExpress,} from 'apollo-server-express'
-import bodyParser from 'body-parser'
-import playground from 'graphql-playground-middleware-express'
+import {ApolloServer,} from 'apollo-server-express'
+import {log,} from 'lib/logger'
 
-import backend from './backend'
+import typeDefs from '~/graphql/schema/root.graphql'
+import resolvers from '~/graphql/resolvers'
+import context from '~/graphql/context'
 
-export default async ({app,}) => {
-  app.get('/playground', playground({
-    'endpoint': '/',
-  }))
+const apollo = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context,
+  'subscriptions': {
+    'path': '/',
+  },
+})
 
-  app.post('/', bodyParser.json({
-    'limit': 120000,
-  }), graphqlExpress(backend))
+export default async ({app, server,}) => {
+  log.debug('applying apollo middleware')
+  apollo.applyMiddleware({
+    app,
+    'path': '/',
+  })
+
+  log.debug('installing subscription handlers')
+  apollo.installSubscriptionHandlers(server)
 }

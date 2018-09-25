@@ -8,6 +8,8 @@
     "env:dev": "env-cmd --no-override --fallback ./.env.local",
     "env:prod": "env-cmd --no-override --fallback ./.prod.env.local",
     "clean": "rm -rf build",
+    "prisma:deploy": "prisma deploy",
+    "prisma:generate": "prisma generate",
     "postmerge": "yarn --silent --frozen-lockfile --non-interactive --production=false",
     "postcommit": "yarn --silent --frozen-lockfile --non-interactive --production=false",
     "wp:dev": "yarn env:dev webpack --watch --progress --run-dev --config ./webpack.config.js",
@@ -63,6 +65,7 @@
     "graphql-playground-middleware-express": "^1.7.3",
     "graphql-tools": "^4.0.0",
     "matomo-reporting-js": "^1.2.0",
+    "subscriptions-transport-ws": "^0.9.15",
     "winston": "^3.1.0",
     "winston-transport-sentry": "^1.0.0"
   }

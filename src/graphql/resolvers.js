@@ -1,11 +1,11 @@
-import {DateTime, EmailAddress, URL,} from '@okgrow/graphql-scalars'
-
 import fields from './fields/**/*.js'
 import mutations from './mutations/**/*.js'
+import subscriptions from './subscriptions/**/*.js'
 
 const Fields = {}
 const Query = {}
 const Mutation = {}
+const Subscription = {}
 
 fields.forEach((field) => {
   const {name,} = field.default
@@ -25,18 +25,21 @@ fields.forEach((field) => {
   }
 })
 
-mutations.forEach((mutation) => {
-  const {name,} = mutation.default
+mutations.forEach((item) => {
+  const {mutation,} = item.default
 
-  Mutation[name] = mutation.default.resolver
+  Mutation[mutation] = item.default.run
+})
+
+subscriptions.forEach((item) => {
+  const {subscription,} = item.default
+
+  Subscription[subscription] = item.default.subscribe
 })
 
 export default {
-  DateTime,
-  EmailAddress,
-  URL,
-
   ...Fields,
   Query,
   Mutation,
+  Subscription,
 }

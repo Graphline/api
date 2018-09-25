@@ -1,7 +1,9 @@
-# import Query from 'api/graphql/schema/root/query.graphql'
-# import Mutation from 'api/graphql/schema/root/mutation.graphql'
+# import Query from 'src/graphql/schema/root/query.graphql'
+# import Mutation from 'src/graphql/schema/root/mutation.graphql'
+# import Subscription from 'src/graphql/schema/root/subscription.graphql'
 
 type Schema {
-  query:    Query!
-  mutation: Mutation!
+  query:        Query!
+  mutation:     Mutation!
+  subscription: Subscription!
 }
