@@ -37,6 +37,7 @@ const config = {
   'resolve': {
     'extensions': ['.js', '.json',],
     'alias':      {
+      '@':      path.resolve(__dirname),
       '~':      path.resolve(__dirname, 'src'),
       'lib':    path.resolve(__dirname, 'lib'),
       'api':    path.resolve(__dirname, 'api'),
