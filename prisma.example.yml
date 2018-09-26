@@ -1,9 +1,13 @@
 endpoint: http://localhost:4466
 datamodel:
-  - prisma/users.prisma
-  - prisma/content.prisma
+  - prisma/model/permission-values.prisma
+  - prisma/model/users.prisma
+  - prisma/model/content.prisma
 
 secret: please-change-me
+
+seed:
+  import: prisma/seed.graphql
 
 generate:
   - generator: javascript-client
