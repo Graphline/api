@@ -2,7 +2,7 @@ import {
   DateTime,
 } from '@okgrow/graphql-scalars'
 
-import fields from './fields/**/*.js'
+import types from './types/**/*.js'
 import mutations from './mutations/**/*.js'
 import subscriptions from './subscriptions/**/*.js'
 
@@ -11,34 +11,45 @@ const Query = {}
 const Mutation = {}
 const Subscription = {}
 
-fields.forEach((field) => {
-  const {name,} = field.default
+types.forEach((type) => {
+  const {
+    name,
+    query,
+    root,
+    fields,
+  } = type
 
   if (name) {
     Fields[name] = {}
   }
 
-  if (field.default.query) {
-    Query[field.default.query] = field.default.root
+  if (query && root) {
+    Query[query] = root
   }
 
-  if (field.default[name]) {
-    Object.keys(field.default[name]).forEach((resolver) => {
-      Fields[name][resolver] = field.default[name][resolver]
+  if (name && fields) {
+    Object.keys(fields).forEach((field) => {
+      Fields[name][field] = fields[field]
+    })
+  }
+
+  if (name && type.resolvers) {
+    Object.keys(type.resolvers).forEach((field) => {
+      Fields[name][field] = type.resolvers[field]
     })
   }
 })
 
 mutations.forEach((item) => {
-  const {mutation,} = item.default
+  const {mutation,} = item
 
-  Mutation[mutation] = item.default.run
+  Mutation[mutation] = item.run
 })
 
 subscriptions.forEach((item) => {
-  const {subscription,} = item.default
+  const {subscription,} = item
 
-  Subscription[subscription] = item.default.subscribe
+  Subscription[subscription] = item.subscribe
 })
 
 export default {
