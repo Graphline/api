@@ -23,7 +23,8 @@ const matomo = new MatomoApi({
 export default ({req,}) => {
   return {
     matomo,
-    req,
     prisma,
+    'headers': req.headers,
+    'cookies': req.cookies,
   }
 }
