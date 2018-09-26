@@ -1036,11 +1036,6 @@ mutation {
         {value: DELETE_ENTRY_OWN}
       ]
     }
-    parents: {
-      connect: {
-        display: "Administrator"
-      }
-    }
   }) {
     id
   }
@@ -1071,6 +1066,18 @@ mutation {
     children: {
       connect: {
         display: "Editor"
+      }
+    }
+  }) {
+    id
+  }
+
+  editorAttachParents: updateRole(where: {
+    display: "Editor"
+  } data: {
+    parents: {
+      connect: {
+        display: "Administrator"
       }
     }
   }) {
