@@ -6,25 +6,9 @@ type Permission {
   updatedAt: DateTime!
   createdBy: User! @relation(name: "PermissionCreator")
   updatedBy: User! @relation(name: "PermissionUpdater")
-  display:   String!
 
-  value: String! @unique
-}
-
-# Crud
-type PermissionLevel {
-  # Crud
-  id:        ID! @unique
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  createdBy: User! @relation(name: "PermissionLevelCreator")
-  updatedBy: User! @relation(name: "PermissionLevelUpdater")
-  display:   String!
-
-  children: [PermissionLevel!]! @relation(name: "PermissionLevelChildren")
-  parents:  [PermissionLevel!]! @relation(name: "PermissionLevelParents")
-
-  permissions: [Permission!]!
+  display: String! @unique
+  value:   PermissionValue! @unique
 }
 
 # Crud
@@ -37,9 +21,11 @@ type Role {
   updatedBy: User! @relation(name: "RoleUpdater")
   display:   String! @unique
 
-  permissionLevel: PermissionLevel!
+  children: [Role!]! @relation(name: "RoleChildren")
+  parents:  [Role!]! @relation(name: "RoleParents")
 
-  users: [User!]! @relation(name: "UserRoles")
+  permissions: [Permission!]!
+  users:       [User!]! @relation(name: "UserRoles")
 }
 
 # Managed
@@ -57,23 +43,36 @@ type Session {
 }
 
 # Managed
-type User {
+type Email {
   # Managed
-  id:        ID!  @unique
+  id:        ID! @unique
   createdAt: DateTime!
   updatedAt: DateTime!
-  display:   String! @default(value: "Anonymous")
+
+  user:          User!
+  address:       String! @unique
+  verified:      Boolean! @default(value: "false")
+  notifications: Boolean!
+}
+
+# Managed
+type User {
+  # Managed
+  id:        ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  display:  String! @unique
+  emails:   [Email!]!
+  password: String!
+  about:    String
 
   roles:    [Role!]! @relation(name: "UserRoles")
-  # entries:  [Entry!]! @relation(name: "UserEntries")
   sessions: [Session!]! @relation(name: "UserSessions")
 
   # Relations
   createdPermissions: [Permission!]! @relation(name: "PermissionCreator")
   updatedPermissions: [Permission!]! @relation(name: "PermissionUpdater")
-
-  createdPermissionLevels: [PermissionLevel!]! @relation(name: "PermissionLevelCreator")
-  updatedPermissionLevels: [PermissionLevel!]! @relation(name: "PermissionLevelUpdater")
 
   createdRoles: [Role!]! @relation(name: "RoleCreator")
   updatedRoles: [Role!]! @relation(name: "RoleUpdater")

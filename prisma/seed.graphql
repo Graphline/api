@@ -1,0 +1,1118 @@
+mutation {
+  createUser(data: {
+    display: "Placeholder User"
+    password: "nope"
+    emails: {
+      create: [
+        {
+          address: "test@test.com"
+          verified: true
+          notifications: true
+        }
+        {
+          address: "myself@example.com"
+          verified: false
+          notifications: true
+        }
+        {
+          address: "somebody.else@invalid.local"
+          verified: false
+          notifications: false
+        }
+        {
+          address: "chicken@orange-purple.asd"
+          verified: true
+          notifications: false
+        }
+      ]
+    }
+  }) {
+    id
+  }
+
+  CREATE_PERMISSION: createPermission(data: {
+    display: "Create permissions"
+    value: CREATE_PERMISSION
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_PERMISSION_OWN: createPermission(data: {
+    display: "Read own permissions"
+    value: READ_PERMISSION_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_PERMISSION_OWN: createPermission(data: {
+    display: "Change own permissions"
+    value: UPDATE_PERMISSION_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_PERMISSION_OWN: createPermission(data: {
+    display: "Delete own permissions"
+    value: DELETE_PERMISSION_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_PERMISSION_OTHERS: createPermission(data: {
+    display: "Read others' permissions"
+    value: READ_PERMISSION_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_PERMISSION_OTHERS: createPermission(data: {
+    display: "Change others' permissions"
+    value: UPDATE_PERMISSION_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_PERMISSION_OTHERS: createPermission(data: {
+    display: "Delete others' permissions"
+    value: DELETE_PERMISSION_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  CREATE_PERMISSION_LEVEL: createPermission(data: {
+    display: "Create permission levels"
+    value: CREATE_PERMISSION_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_PERMISSION_LEVEL_OWN: createPermission(data: {
+    display: "Read own permission levels"
+    value: READ_PERMISSION_LEVEL_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_PERMISSION_LEVEL_OWN: createPermission(data: {
+    display: "Change own permission levels"
+    value: UPDATE_PERMISSION_LEVEL_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_PERMISSION_LEVEL_OWN: createPermission(data: {
+    display: "Delete own permission levels"
+    value: DELETE_PERMISSION_LEVEL_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_PERMISSION_LEVEL_OTHERS: createPermission(data: {
+    display: "Read others' permission levels"
+    value: READ_PERMISSION_LEVEL_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_PERMISSION_LEVEL_OTHERS: createPermission(data: {
+    display: "Change others' permission levels"
+    value: UPDATE_PERMISSION_LEVEL_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_PERMISSION_LEVEL_OTHERS: createPermission(data: {
+    display: "Delete others' permission levels"
+    value: DELETE_PERMISSION_LEVEL_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  CREATE_ROLE: createPermission(data: {
+    display: "Create roles"
+    value: CREATE_ROLE
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_ROLE_OWN: createPermission(data: {
+    display: "Read own roles"
+    value: READ_ROLE_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_ROLE_OWN: createPermission(data: {
+    display: "Change own roles"
+    value: UPDATE_ROLE_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_ROLE_OWN: createPermission(data: {
+    display: "Delete own roles"
+    value: DELETE_ROLE_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_ROLE_OTHERS: createPermission(data: {
+    display: "Read others' roles"
+    value: READ_ROLE_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_ROLE_OTHERS: createPermission(data: {
+    display: "Change others' roles"
+    value: UPDATE_ROLE_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_ROLE_OTHERS: createPermission(data: {
+    display: "Delete others' roles"
+    value: DELETE_ROLE_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_USER_SAME_LEVEL: createPermission(data: {
+    display: "Read users on the same permission level"
+    value: READ_USER_SAME_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_USER_SAME_LEVEL: createPermission(data: {
+    display: "Change users on the same permission level"
+    value: UPDATE_USER_SAME_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_USER_SAME_LEVEL: createPermission(data: {
+    display: "Delete users on the same permission level"
+    value: DELETE_USER_SAME_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  IMPERSONATE_USER_SAME_LEVEL: createPermission(data: {
+    display: "Impersonate users on the same permission level"
+    value: IMPERSONATE_USER_SAME_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_USER_ABOVE_LEVEL: createPermission(data: {
+    display: "Read users on permission levels above their own"
+    value: READ_USER_ABOVE_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_USER_ABOVE_LEVEL: createPermission(data: {
+    display: "Change users on permission levels above their own"
+    value: UPDATE_USER_ABOVE_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_USER_ABOVE_LEVEL: createPermission(data: {
+    display: "Delete users on permission levels above their own"
+    value: DELETE_USER_ABOVE_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  IMPERSONATE_USER_ABOVE_LEVEL: createPermission(data: {
+    display: "Impersonate users on permission levels above their own"
+    value: IMPERSONATE_USER_ABOVE_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_USER_BELOW_LEVEL: createPermission(data: {
+    display: "Read users on permission levels below their own"
+    value: READ_USER_BELOW_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_USER_BELOW_LEVEL: createPermission(data: {
+    display: "Update users on permission levels below their own"
+    value: UPDATE_USER_BELOW_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_USER_BELOW_LEVEL: createPermission(data: {
+    display: "Delete users on permission levels below their own"
+    value: DELETE_USER_BELOW_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  IMPERSONATE_USER_BELOW_LEVEL: createPermission(data: {
+    display: "Impersonate users on permission levels below their own"
+    value: IMPERSONATE_USER_BELOW_LEVEL
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  CREATE_SESSION: createPermission(data: {
+    display: "Ability to log in"
+    value: CREATE_SESSION
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_SESSION_OWN: createPermission(data: {
+    display: "Ability to read details about the current login session"
+    value: READ_SESSION_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_SESSION_OWN: createPermission(data: {
+    display: "Ability to change details about the current login session"
+    value: UPDATE_SESSION_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_SESSION_OWN: createPermission(data: {
+    display: "Ability to log out"
+    value: DELETE_SESSION_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  CREATE_SLUG: createPermission(data: {
+    display: "Create slugs"
+    value: CREATE_SLUG
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_SLUG_OWN: createPermission(data: {
+    display: "Read own slugs"
+    value: READ_SLUG_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_SLUG_OWN: createPermission(data: {
+    display: "Change own slugs"
+    value: UPDATE_SLUG_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_SLUG_OWN: createPermission(data: {
+    display: "Delete own slugs"
+    value: DELETE_SLUG_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_SLUG_OTHERS: createPermission(data: {
+    display: "Read others' slugs"
+    value: READ_SLUG_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_SLUG_OTHERS: createPermission(data: {
+    display: "Change others' slugs"
+    value: UPDATE_SLUG_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_SLUG_OTHERS: createPermission(data: {
+    display: "Delete others' slugs"
+    value: DELETE_SLUG_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  CREATE_ENTRY: createPermission(data: {
+    display: "Create entries"
+    value: CREATE_ENTRY
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_ENTRY_OWN: createPermission(data: {
+    display: "Read own entries"
+    value: READ_ENTRY_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_ENTRY_OWN: createPermission(data: {
+    display: "Change own entries"
+    value: UPDATE_ENTRY_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_ENTRY_OWN: createPermission(data: {
+    display: "Delete own entries"
+    value: DELETE_ENTRY_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_ENTRY_OTHERS: createPermission(data: {
+    display: "Read others' entries"
+    value: READ_ENTRY_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_ENTRY_OTHERS: createPermission(data: {
+    display: "Change others' entries"
+    value: UPDATE_ENTRY_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_ENTRY_OTHERS: createPermission(data: {
+    display: "Delete others' entries"
+    value: DELETE_ENTRY_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  CREATE_CATEGORY: createPermission(data: {
+    display: "Create categories"
+    value: CREATE_CATEGORY
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_CATEGORY_OWN: createPermission(data: {
+    display: "Read own categories"
+    value: READ_CATEGORY_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_CATEGORY_OWN: createPermission(data: {
+    display: "Change own categories"
+    value: UPDATE_CATEGORY_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_CATEGORY_OWN: createPermission(data: {
+    display: "Delete own categories"
+    value: DELETE_CATEGORY_OWN
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_CATEGORY_OTHERS: createPermission(data: {
+    display: "Read others' categories"
+    value: READ_CATEGORY_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_CATEGORY_OTHERS: createPermission(data: {
+    display: "Change others' categories"
+    value: UPDATE_CATEGORY_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_CATEGORY_OTHERS: createPermission(data: {
+    display: "Delete others' categories"
+    value: DELETE_CATEGORY_OTHERS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  editorRole: createRole(data: {
+    display: "Editor"
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    permissions: {
+      connect: [
+        {value: CREATE_ENTRY}
+        {value: READ_ENTRY_OWN}
+        {value: UPDATE_ENTRY_OWN}
+        {value: DELETE_ENTRY_OWN}
+      ]
+    }
+    parents: {
+      connect: {
+        display: "Administrator"
+      }
+    }
+  }) {
+    id
+  }
+
+  administratorRole: createRole(data: {
+    display: "Administrator"
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    permissions: {
+      connect: [
+        {value: CREATE_ENTRY}
+        {value: READ_ENTRY_OWN}
+        {value: UPDATE_ENTRY_OWN}
+        {value: DELETE_ENTRY_OWN}
+        {value: READ_ENTRY_OTHERS}
+        {value: UPDATE_ENTRY_OTHERS}
+        {value: DELETE_ENTRY_OTHERS}
+      ]
+    }
+    children: {
+      connect: {
+        display: "Editor"
+      }
+    }
+  }) {
+    id
+  }
+
+  testEntry: createEntry(data: {
+    display: "Test entry"
+    publishedAt: "2018-09-26T17:36:11.502Z"
+    published: true
+    publishedBy: {
+      connect:{
+        display: "Placeholder User"
+      }
+    }
+    slug: {
+      create: {
+        display: "Test Slug"
+        value:   "test-slug"
+        createdBy: {
+          connect: {
+            display: "Placeholder User"
+          }
+        }
+        updatedBy: {
+          connect: {
+            display: "Placeholder User"
+          }
+        }
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+}

@@ -22,7 +22,7 @@ type Entry {
   display:   String!
 
   # Routable
-  slug: Slug! @unique
+  slug: Slug!
 
   # Publishable
   published:   Boolean! @default(value: "false")
@@ -43,7 +43,7 @@ type Category {
   display:   String!
 
   # Routable
-  slug: Slug! @unique
+  slug: Slug!
 
   entries: [Entry!]! @relation(name: "EntryCategories")
 }
