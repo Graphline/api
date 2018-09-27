@@ -7,6 +7,7 @@ type Permission implements Crud {
   createdBy: User!
   updatedBy: User!
   display:   String!
+  trashed:   Boolean!
 
   value: String!
 }

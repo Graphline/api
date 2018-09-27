@@ -1,12 +1,13 @@
 # import Crud from '../interface/crud.graphql'
 
-type Slug {
+type Slug implements Crud {
   id:        ID!
   createdAt: DateTime!
   updatedAt: DateTime!
   createdBy: User!
   updatedBy: User!
   display:   String!
+  trashed:   Boolean!
 
   value: String!
 }

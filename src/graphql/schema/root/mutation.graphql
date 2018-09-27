@@ -1,3 +1,15 @@
 type Mutation {
-  default: String
+  createEntry(data: EntryCreateInput!): Entry!
+  createCategory(data: CategoryCreateInput!): Category!
+  createPermission(data: PermissionCreateInput!): Permission!
+  createRole(data: RoleCreateInput!): Role!
+  createSlug(data: SlugCreateInput!): Slug!
+
+  updateEntry(where: EntryWhereUniqueInput, data: EntryUpdateInput!): Entry!
+  updateCategory(where: CategoryWhereUniqueInput, data: CategoryUpdateInput!): Category!
+  updatePermission(where: PermissionWhereUniqueInput, data: PermissionUpdateInput!): Permission!
+  updateRole(where: RoleWhereUniqueInput, data: RoleUpdateInput!): Role!
+  updateSlug(where: SlugWhereUniqueInput, data: SlugUpdateInput!): Slug!
+
+  createUser(data: RegistrationInput!): User!
 }

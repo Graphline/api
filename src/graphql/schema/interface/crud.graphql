@@ -9,4 +9,5 @@ interface Crud {
   createdBy: User!
   updatedBy: User!
   display:   String!
+  trashed:   Boolean!
 }

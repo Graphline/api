@@ -1,5 +1,7 @@
 import {
   DateTime,
+  URL,
+  EmailAddress,
 } from '@okgrow/graphql-scalars'
 
 import types from './types/**/*.js'
@@ -41,9 +43,9 @@ types.forEach((type) => {
 })
 
 mutations.forEach((item) => {
-  const {mutation,} = item
+  const {name, mutate,} = item
 
-  Mutation[mutation] = item.run
+  Mutation[name] = mutate
 })
 
 subscriptions.forEach((item) => {
@@ -54,6 +56,8 @@ subscriptions.forEach((item) => {
 
 export default {
   DateTime,
+  URL,
+  EmailAddress,
 
   ...Fields,
   Query,

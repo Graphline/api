@@ -1,7 +1,8 @@
 # import Crud from '../interface/crud.graphql'
+# import Routable from '../interface/routable.graphql'
 
-type Role implements Crud {
-  id:        ID!
+type Category implements Crud & Routable {
+  id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
   createdBy: User!
@@ -9,9 +10,7 @@ type Role implements Crud {
   display:   String!
   trashed:   Boolean!
 
-  children: [Role]!
-  parents:  [Role]!
+  slug: Slug!
 
-  permissions: [Permission]!
-  users: [User]!
+  entries: [Entry]!
 }

@@ -1,14 +1,18 @@
+# import {} from 'prisma/generated/graphql/prisma.graphql'
+#
 # import Query from 'src/graphql/schema/root/query.graphql'
 # import Mutation from 'src/graphql/schema/root/mutation.graphql'
 # import Subscription from 'src/graphql/schema/root/subscription.graphql'
 #
 # import DateTime from 'src/graphql/schema/scalar/date-time.graphql'
+# import URL from 'src/graphql/schema/scalar/url.graphql'
+# import EmailAddress from 'src/graphql/schema/scalar/email-address.graphql'
 #
 # import {Slug} from 'src/graphql/schema/crud/slug.graphql'
 # import {Entry} from 'src/graphql/schema/crud/entry.graphql'
 # import {Role} from 'src/graphql/schema/crud/role.graphql'
-# import {PermissionLevel} from 'src/graphql/schema/crud/permission-level.graphql'
 # import {Permission} from 'src/graphql/schema/crud/permission.graphql'
+# import {Category} from 'src/graphql/schema/crud/category.graphql'
 #
 # import {Session} from 'src/graphql/schema/managed/session.graphql'
 # import {User} from 'src/graphql/schema/managed/user.graphql'

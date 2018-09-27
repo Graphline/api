@@ -1,3 +1,14 @@
 type Query {
-  entry(id: ID!): Entry
+  # Content
+  entry(where: EntryWhereUniqueInput!): Entry
+  category(where: CategoryWhereUniqueInput!): Category
+  slug(where: SlugWhereUniqueInput!): Slug
+  event(where: EventWhereUniqueInput!): Event
+
+  # Users
+  role(where: RoleWhereUniqueInput!): Role
+  permission(where: PermissionWhereUniqueInput!): Permission
+  user(where: UserWhereUniqueInput!): User
+
+  node(id: ID!): Node
 }

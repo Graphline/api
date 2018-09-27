@@ -1,3 +1,7 @@
 type Subscription {
-  default: String
+  entry(where: EntrySubscriptionWhereInput!): EntrySubscriptionPayload
+  category(where: CategorySubscriptionWhereInput!): CategorySubscriptionPayload
+  slug(where: SlugSubscriptionWhereInput!): SlugSubscriptionPayload
+  permission(where: PermissionSubscriptionWhereInput!): PermissionSubscriptionPayload
+  role(where: RoleSubscriptionWhereInput!): RoleSubscriptionPayload
 }

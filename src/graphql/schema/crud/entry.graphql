@@ -9,6 +9,7 @@ type Entry implements Crud & Routable & Publishable {
   createdBy: User!
   updatedBy: User!
   display:   String!
+  trashed:   Boolean!
 
   slug: Slug!
 

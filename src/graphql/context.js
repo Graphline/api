@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import {Agent,} from 'https'
 import MatomoApi from 'matomo-reporting-js'
 
-import {prisma,} from '@/prisma/client'
+import {prisma,} from '@/prisma/generated/javascript'
 import {log,} from 'lib/logger'
 
 const agent = new Agent({
