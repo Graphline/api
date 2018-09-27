@@ -6,6 +6,7 @@ type Permission {
   updatedAt: DateTime!
   createdBy: User! @relation(name: "PermissionCreator")
   updatedBy: User! @relation(name: "PermissionUpdater")
+  trashed:   Boolean! @default(value: "false")
 
   display: String! @unique
   value:   PermissionValue! @unique
@@ -20,6 +21,7 @@ type Role {
   createdBy: User! @relation(name: "RoleCreator")
   updatedBy: User! @relation(name: "RoleUpdater")
   display:   String! @unique
+  trashed:   Boolean! @default(value: "false")
 
   children: [Role!]! @relation(name: "RoleChildren")
   parents:  [Role!]! @relation(name: "RoleParents")

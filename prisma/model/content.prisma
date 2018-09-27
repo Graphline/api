@@ -7,6 +7,7 @@ type Slug {
   createdBy: User! @relation(name: "SlugCreator")
   updatedBy: User! @relation(name: "SlugUpdater")
   display:   String!
+  trashed:   Boolean! @default(value: "false")
 
   value: String! @unique
 }
@@ -20,6 +21,7 @@ type Entry {
   createdBy: User! @relation(name: "EntryCreator")
   updatedBy: User! @relation(name: "EntryUpdater")
   display:   String!
+  trashed:   Boolean! @default(value: "false")
 
   # Routable
   slug: Slug!
@@ -41,9 +43,31 @@ type Category {
   createdBy: User! @relation(name: "CategoryCreator")
   updatedBy: User! @relation(name: "CategoryUpdater")
   display:   String!
+  trashed:   Boolean! @default(value: "false")
 
   # Routable
   slug: Slug!
 
   entries: [Entry!]! @relation(name: "EntryCategories")
+}
+
+enum EventType {
+  CREATE
+  READ
+  UPDATE
+  TRASH
+  DELETE
+
+  ERROR
+  WARN
+  INFO
+}
+
+type Event {
+  id:        ID! @unique
+  createdAt: DateTime!
+
+  subject: ID!
+  type:    EventType!
+  value:   String!
 }
