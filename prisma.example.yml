@@ -11,7 +11,9 @@ seed:
 
 generate:
   - generator: javascript-client
-    output: ./prisma/client
+    output: ./prisma/generated/javascript
+  - generator: graphql-schema
+    output: ./prisma/generated/graphql
 
 hooks:
   post-deploy:

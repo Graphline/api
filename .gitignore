@@ -3,7 +3,7 @@ bkup.*
 /screenshots
 /licenses.json
 /logs
-/prisma/client
+/prisma/generated
 /prisma.yml
 
 /app/static/
