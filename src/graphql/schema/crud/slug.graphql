@@ -1,5 +1,11 @@
 # import Crud from '../interface/crud.graphql'
 
+input SlugInput {
+  display: String!
+  trashed: Boolean
+  value:   String!
+}
+
 type Slug implements Crud {
   id:        ID!
   createdAt: DateTime!
@@ -7,7 +13,7 @@ type Slug implements Crud {
   createdBy: User!
   updatedBy: User!
   display:   String!
-  trashed:   Boolean!
+  trashed:   Boolean
 
   value: String!
 }

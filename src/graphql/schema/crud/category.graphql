@@ -1,6 +1,10 @@
 # import Crud from '../interface/crud.graphql'
 # import Routable from '../interface/routable.graphql'
 
+input CategoryCreateInput {
+  display: String!
+}
+
 type Category implements Crud & Routable {
   id: ID!
   createdAt: DateTime!

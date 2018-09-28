@@ -11,4 +11,5 @@ type Query {
   user(where: UserWhereUniqueInput!): User
 
   node(id: ID!): Node
+  viewer: User
 }

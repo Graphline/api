@@ -148,7 +148,6 @@
     "no-multiple-empty-lines": 2,
     "no-nested-ternary": 2,
     "no-new-object": 2,
-    "no-ternary": 2,
     "no-trailing-spaces": 2,
     "no-underscore-dangle": [2, {"allow": ["_id", "_options", "__typename", "_paq"]}],
     "no-unneeded-ternary": 2,

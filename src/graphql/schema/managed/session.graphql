@@ -1,5 +1,10 @@
 # import Managed from '../interface/managed.graphql'
 
+input LoginInput {
+  email:    EmailAddress!
+  password: String!
+}
+
 type Session implements Managed {
   id:        ID!
   createdAt: DateTime!

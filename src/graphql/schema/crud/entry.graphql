@@ -2,6 +2,12 @@
 # import Publishable from '../interface/publishable.graphql'
 # import Crud from '../interface/crud.graphql'
 
+input EntryCreateInput {
+  display:    String!
+  slug:       SlugInput
+  categories: [ID!]
+}
+
 type Entry implements Crud & Routable & Publishable {
   id: ID!
   createdAt: DateTime!

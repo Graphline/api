@@ -1,6 +1,6 @@
 # import Managed from '../interface/managed.graphql'
 
-input AvatarURLWhereInput {
+input AvatarUrlWhereInput {
   size: Int = 64
 }
 
@@ -17,9 +17,12 @@ type User implements Managed {
   display:   String!
 
   roles:    [Role]!
-  entries:  [Entry]!
   sessions: [Session]!
 
+  createdEntries:   [Entry]!
+  updatedEntries:   [Entry]!
+  publishedEntries: [Entry]!
+
   # Derived
-  avatarUrl(where: AvatarURLWhereInput = "{}"): URL!
+  avatarUrl(where: AvatarUrlWhereInput): URL!
 }
