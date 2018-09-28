@@ -2,29 +2,11 @@ mutation {
   createUser(data: {
     display: "Placeholder User"
     password: "nope"
-    emails: {
-      create: [
-        {
-          address: "test@test.com"
-          verified: true
-          notifications: true
-        }
-        {
-          address: "myself@example.com"
-          verified: false
-          notifications: true
-        }
-        {
-          address: "somebody.else@invalid.local"
-          verified: false
-          notifications: false
-        }
-        {
-          address: "chicken@orange-purple.asd"
-          verified: true
-          notifications: false
-        }
-      ]
+    email: {
+      create: {
+        address: "chicken@orange-purple.asd"
+        verified: true
+      }
     }
   }) {
     id
@@ -815,23 +797,6 @@ mutation {
   IMPERSONATE_USER_BELOW_LEVEL: createPermission(data: {
     display: "Impersonate users on permission levels below their own"
     value: IMPERSONATE_USER_BELOW_LEVEL
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  CREATE_SESSION: createPermission(data: {
-    display: "Ability to log in"
-    value: CREATE_SESSION
     createdBy: {
       connect: {
         display: "Placeholder User"

@@ -24,11 +24,11 @@ type Entry {
   trashed:   Boolean! @default(value: "false")
 
   # Routable
-  slug: Slug!
+  slug: Slug
 
   # Publishable
   published:   Boolean! @default(value: "false")
-  publishedAt: DateTime!
+  publishedAt: DateTime
   publishedBy: User! @relation(name: "EntryPublisher")
 
   categories: [Category!]! @relation(name: "EntryCategories")
@@ -46,7 +46,7 @@ type Category {
   trashed:   Boolean! @default(value: "false")
 
   # Routable
-  slug: Slug!
+  slug: Slug
 
   entries: [Entry!]! @relation(name: "EntryCategories")
 }

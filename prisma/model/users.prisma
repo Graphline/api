@@ -51,10 +51,9 @@ type Email {
   createdAt: DateTime!
   updatedAt: DateTime!
 
-  user:          User!
-  address:       String! @unique
-  verified:      Boolean! @default(value: "false")
-  notifications: Boolean!
+  user:     User!
+  address:  String! @unique
+  verified: Boolean! @default(value: "false")
 }
 
 # Managed
@@ -64,8 +63,9 @@ type User {
   createdAt: DateTime!
   updatedAt: DateTime!
 
+  enabled:  Boolean! @default(value: "true")
   display:  String! @unique
-  emails:   [Email!]!
+  email:    Email! @unique
   password: String!
   about:    String
 
