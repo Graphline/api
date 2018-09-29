@@ -26,7 +26,7 @@ export const mutate = async (root, {data,}, {prisma, viewer,}) => {
    */
 
   if (viewer) {
-    const permissions = viewer.permissions()
+    const permissions = await viewer.permissions()
 
     if (!permissions.includes('CREATE_USER')) {
       throw new ForbiddenError('Permission denied')

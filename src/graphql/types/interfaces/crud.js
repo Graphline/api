@@ -12,16 +12,12 @@ export const resolvers = {
   },
 }
 
-export const fields = {
-  createdBy ({id, __typename,}, data, {prisma,}, info) {
-    const method = info.path.prev.key
-
+export const fields = (method) => ({
+  createdBy ({id,}, data, {prisma,}, info) {
     return prisma[method]({id,}).createdBy()
   },
 
   updatedBy ({id,}, data, {prisma,}, info) {
-    const method = info.path.prev.key
-
     return prisma[method]({id,}).updatedBy()
   },
-}
+})

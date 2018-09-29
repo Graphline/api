@@ -107,6 +107,14 @@ const getViewer = ({token,}) => {
     'permissions': () => getPermissions({
       'id': claim.data.user.id,
     }),
+
+    'owns': async (node, name) => {
+      const owner = await prisma[name]({
+        'id': node.id,
+      }).createdBy()
+
+      return owner.id === claim.data.user.id
+    },
   }
 }
 

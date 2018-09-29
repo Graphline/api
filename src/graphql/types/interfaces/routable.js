@@ -12,10 +12,10 @@ export const resolvers = {
   },
 }
 
-export const fields = {
+export const fields = (method) => ({
   slug ({slug,}, data, {prisma,}) {
     return prisma.slug({
       'id': slug,
     })
   },
-}
+})

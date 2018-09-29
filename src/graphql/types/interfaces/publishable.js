@@ -12,10 +12,10 @@ export const resolvers = {
   },
 }
 
-export const fields = {
+export const fields = (method) => ({
   publishedBy ({publishedBy,}, data, {prisma,}) {
     return prisma.user({
       'id': publishedBy,
     })
   },
-}
+})

@@ -5,6 +5,46 @@ type Query {
   slug(where: SlugWhereUniqueInput!): Slug
   event(where: EventWhereUniqueInput!): Event
 
+  entries(
+    where: EntryWhereInput
+    orderBy: EntryOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Entry]!
+
+  categories(
+    where: CategoryWhereInput
+    orderBy: CategoryOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Category]!
+
+  slugs(
+    where: SlugWhereInput
+    orderBy: SlugOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Slug]!
+
+  events(
+    where: EventWhereInput
+    orderBy: EventOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Event]!
+
   # Users
   role(where: RoleWhereUniqueInput!): Role
   permission(where: PermissionWhereUniqueInput!): Permission
