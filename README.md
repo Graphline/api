@@ -7,5 +7,5 @@
   <br>
 
   by [@DecentM](https://github.com/DecentM)  
-  Backend for <b>Graphline</b> (an dynamic CMS in the works)
+  Backend for <b>Graphline</b> (a dynamic CMS in the works)
 </div>

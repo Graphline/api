@@ -3,6 +3,7 @@ import {Agent,} from 'https'
 import MatomoApi from 'matomo-reporting-js'
 import jwt from 'jsonwebtoken'
 import {flattenDeep, uniq,} from 'lodash'
+import bearer from 'parse-bearer-token'
 
 import {prisma,} from '@/prisma/generated/javascript'
 import {log,} from 'lib/logger'
@@ -123,7 +124,7 @@ export default ({req,}) => {
     matomo,
     prisma,
     'viewer': getViewer({
-      'token': req.headers.authorization,
+      'token': bearer(req),
     }),
     'headers':    req.headers,
     'connection': req.connection,
