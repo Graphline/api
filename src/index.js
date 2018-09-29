@@ -3,6 +3,9 @@ import http from 'http'
 import routes from '~/express/routes'
 import cors from 'lib/cors'
 import {log,} from 'lib/logger'
+import {check,} from 'lib/environment-checks'
+
+check()
 
 let server = null
 
