@@ -13,6 +13,7 @@ const apollo = new ApolloServer({
   'subscriptions': {
     'path': '/',
   },
+  'tracing': process.env.NODE_ENV === 'development',
 })
 
 export default async ({app, server,}) => {
