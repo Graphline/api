@@ -1,11 +1,65 @@
 mutation {
   createUser(data: {
     display: "Placeholder User"
-    password: "nope"
+
+    # This user's password is "asd"
+    password: "$2a$12$RVdDV95pzZABwtFiulzOqO.7YPDZL/gMCvSgY0/2jBSlfR4hkP/2K"
+
     email: {
       create: {
         address: "chicken@orange-purple.asd"
         verified: true
+      }
+    }
+  }) {
+    id
+  }
+
+  READ_EVENTS: createPermission(data: {
+    display: "Read events"
+    value: READ_EVENTS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  TRASH_EVENTS: createPermission(data: {
+    display: "Trash events"
+    value: TRASH_EVENTS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  DELETE_EVENTS: createPermission(data: {
+    display: "Delte events"
+    value: DELETE_EVENTS
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
       }
     }
   }) {
@@ -1381,6 +1435,18 @@ mutation {
     display: "Editor"
   } data: {
     parents: {
+      connect: {
+        display: "Administrator"
+      }
+    }
+  }) {
+    id
+  }
+
+  addRoleToUser: updateUser(where: {
+    display: "Placeholder User"
+  } data: {
+    roles: {
       connect: {
         display: "Administrator"
       }

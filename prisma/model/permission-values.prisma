@@ -3,6 +3,11 @@
 ##
 
 enum PermissionValue {
+  # Events
+  READ_EVENTS
+  TRASH_EVENTS
+  DELETE_EVENTS
+
   # Permissions
   CREATE_PERMISSION
   READ_PERMISSION_OWN
