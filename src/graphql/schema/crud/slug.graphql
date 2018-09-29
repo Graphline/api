@@ -13,7 +13,7 @@ type Slug implements Crud {
   createdBy: User!
   updatedBy: User!
   display:   String!
-  trashed:   Boolean
+  trashed:   Boolean!
 
   value: String!
 }
