@@ -41,7 +41,7 @@ type Session {
   expiresAt: DateTime!
   ip:        String!
   ua:        String!
-  token:     String!
+  token:     String! @unique
 }
 
 # Managed
