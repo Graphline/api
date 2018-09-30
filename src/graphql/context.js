@@ -63,7 +63,6 @@ const getPermissions = async ({id,}) => {
   }).$fragment(`
     fragment UserSessionFragment on User {
       id
-      password
       roles {
         id
       }
@@ -80,7 +79,7 @@ const getPermissions = async ({id,}) => {
   return uniq(flattenDeep(roles))
 }
 
-const getViewer = ({token,}) => {
+const getViewer = async ({token,}) => {
   if (!token) {
     return null
   }
@@ -95,15 +94,15 @@ const getViewer = ({token,}) => {
     log.warn(error)
   }
 
-  if (!claim) {
+  const user = await prisma.session({token,}).user()
+
+  if (!claim || !user) {
     return null
   }
 
   /* eslint-disable-next-line accessor-pairs */
   return {
-    'user': () => prisma.user({
-      'id': claim.data.user.id,
-    }),
+    'user': () => user,
 
     'permissions': () => getPermissions({
       'id': claim.data.user.id,
@@ -119,12 +118,15 @@ const getViewer = ({token,}) => {
   }
 }
 
-export default ({req,}) => {
+export default async ({req,}) => {
+  const token = bearer(req)
+
   return {
     matomo,
     prisma,
-    'viewer': getViewer({
-      'token': bearer(req),
+    token,
+    'viewer': await getViewer({
+      token,
     }),
     'headers':    req.headers,
     'connection': req.connection,
