@@ -5,6 +5,10 @@ input LoginInput {
   password: String!
 }
 
+input DeleteSessionInput {
+  id: ID!
+}
+
 type Session implements Managed {
   id:        ID!
   createdAt: DateTime!

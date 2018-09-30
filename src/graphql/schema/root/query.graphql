@@ -49,6 +49,7 @@ type Query {
   role(where: RoleWhereUniqueInput!): Role
   permission(where: PermissionWhereUniqueInput!): Permission
   user(where: UserWhereUniqueInput!): User
+  sessions(where: SessionWhereInput): [Session]!
 
   node(id: ID!): Node
   viewer: User

@@ -12,5 +12,7 @@ type Mutation {
   updateSlug(where: SlugWhereUniqueInput, data: SlugUpdateInput!): Slug!
 
   createUser(data: RegistrationInput!): User!
+
   createSession(data: LoginInput!): Session!
+  deleteSession(data: DeleteSessionInput): Boolean!
 }
