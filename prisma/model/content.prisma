@@ -30,6 +30,7 @@ type Entry {
   published:   Boolean! @default(value: "false")
   publishedAt: DateTime
   publishedBy: User! @relation(name: "EntryPublisher")
+  content:     String!
 
   categories: [Category!]! @relation(name: "EntryCategories")
 }

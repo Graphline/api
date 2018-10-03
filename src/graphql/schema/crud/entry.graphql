@@ -6,6 +6,16 @@ input EntryCreateInput {
   display:    String!
   slug:       SlugInput
   categories: [ID!]
+  content:    String
+}
+
+input EntryUpdateInput {
+  id:         ID!
+  display:    String!
+  slug:       SlugInput
+  categories: [ID]
+  content:    String!
+  published:  Boolean!
 }
 
 type Entry implements Crud & Routable & Publishable {
@@ -22,4 +32,5 @@ type Entry implements Crud & Routable & Publishable {
   published:   Boolean!
   publishedAt: DateTime!
   publishedBy: User!
+  content:     String!
 }

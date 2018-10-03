@@ -1,6 +1,7 @@
 import {ApolloServer,} from 'apollo-server-express'
 import {log,} from 'lib/logger'
 import cookieParser from 'cookie-parser'
+import omitDeep from 'omit-deep-lodash'
 
 import typeDefs from '~/graphql/schema/root.graphql'
 import resolvers from '~/graphql/resolvers'
@@ -14,6 +15,14 @@ const apollo = new ApolloServer({
     'path': '/',
   },
   'tracing': process.env.NODE_ENV === 'development',
+  formatParams (params) {
+    const {variables, ...rest} = params
+
+    return {
+      ...rest,
+      'variables': omitDeep(variables, '__typename'),
+    }
+  },
 })
 
 export default async ({app, server,}) => {

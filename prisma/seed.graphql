@@ -1459,6 +1459,7 @@ mutation {
     display: "Test entry"
     publishedAt: "2018-09-26T17:36:11.502Z"
     published: true
+    content: "Hello, <b>World!</b>"
     publishedBy: {
       connect:{
         display: "Placeholder User"

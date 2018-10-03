@@ -69,6 +69,7 @@
     "lodash": "^4.17.11",
     "matomo-reporting-js": "^1.2.0",
     "moment": "^2.22.2",
+    "omit-deep-lodash": "^1.1.2",
     "parse-bearer-token": "^1.0.0",
     "pify": "^4.0.0",
     "subscriptions-transport-ws": "^0.9.15",

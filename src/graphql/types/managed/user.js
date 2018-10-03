@@ -24,6 +24,16 @@ export const fields = {
     })
   },
 
+  sessions ({id,}, data, {prisma,}) {
+    return prisma.sessions({
+      'where': {
+        'user': {
+          id,
+        },
+      },
+    })
+  },
+
   createdEntries ({id,}, data, {prisma,}) {
     return prisma.entries({
       'where': {
