@@ -1,0 +1,10 @@
+union EventSubject = Category | Entry | Permission | Role | Slug | Session | User
+
+type Event {
+  id:        ID!
+  createdAt: DateTime!
+
+  subject:   EventSubject!
+  type:      EventType!
+  value:     String!
+}

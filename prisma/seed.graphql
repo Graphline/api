@@ -219,159 +219,6 @@ mutation {
     id
   }
 
-  CREATE_PERMISSION_LEVEL: createPermission(data: {
-    display: "Create permission levels"
-    value: CREATE_PERMISSION_LEVEL
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  READ_PERMISSION_LEVEL_OWN: createPermission(data: {
-    display: "Read own permission levels"
-    value: READ_PERMISSION_LEVEL_OWN
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  UPDATE_PERMISSION_LEVEL_OWN: createPermission(data: {
-    display: "Change own permission levels"
-    value: UPDATE_PERMISSION_LEVEL_OWN
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  TRASH_PERMISSION_LEVEL_OWN: createPermission(data: {
-    display: "Trash own permission levels"
-    value: TRASH_PERMISSION_LEVEL_OWN
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  DELETE_PERMISSION_LEVEL_OWN: createPermission(data: {
-    display: "Delete own permission levels"
-    value: DELETE_PERMISSION_LEVEL_OWN
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  READ_PERMISSION_LEVEL_OTHERS: createPermission(data: {
-    display: "Read others' permission levels"
-    value: READ_PERMISSION_LEVEL_OTHERS
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  UPDATE_PERMISSION_LEVEL_OTHERS: createPermission(data: {
-    display: "Change others' permission levels"
-    value: UPDATE_PERMISSION_LEVEL_OTHERS
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  TRASH_PERMISSION_LEVEL_OTHERS: createPermission(data: {
-    display: "Trash others' permission levels"
-    value: TRASH_PERMISSION_LEVEL_OTHERS
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
-  DELETE_PERMISSION_LEVEL_OTHERS: createPermission(data: {
-    display: "Delete others' permission levels"
-    value: DELETE_PERMISSION_LEVEL_OTHERS
-    createdBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-    updatedBy: {
-      connect: {
-        display: "Placeholder User"
-      }
-    }
-  }) {
-    id
-  }
-
   CREATE_ROLE: createPermission(data: {
     display: "Create roles"
     value: CREATE_ROLE
@@ -1375,6 +1222,40 @@ mutation {
     id
   }
 
+  READ_SYSTEM_CONFIGURATION: createPermission(data: {
+    display: "Read system configuration"
+    value: READ_SYSTEM_CONFIGURATION
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
+  UPDATE_SYSTEM_CONFIGURATION: createPermission(data: {
+    display: "Update system configuration"
+    value: UPDATE_SYSTEM_CONFIGURATION
+    createdBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+    updatedBy: {
+      connect: {
+        display: "Placeholder User"
+      }
+    }
+  }) {
+    id
+  }
+
   editorRole: createRole(data: {
     display: "Editor"
     createdBy: {
@@ -1413,13 +1294,104 @@ mutation {
     }
     permissions: {
       connect: [
+        # Events
+        {value: READ_EVENTS}
+        {value: TRASH_EVENTS}
+        {value: DELETE_EVENTS}
+
+        # System config
+        {value: READ_SYSTEM_CONFIGURATION}
+        {value: UPDATE_SYSTEM_CONFIGURATION}
+
+        # Permissions
+        {value: CREATE_PERMISSION}
+        {value: READ_PERMISSION_OWN}
+        {value: UPDATE_PERMISSION_OWN}
+        {value: TRASH_PERMISSION_OWN}
+        {value: DELETE_PERMISSION_OWN}
+
+        {value: READ_PERMISSION_OTHERS}
+        {value: UPDATE_PERMISSION_OTHERS}
+        {value: TRASH_PERMISSION_OTHERS}
+        {value: DELETE_PERMISSION_OTHERS}
+
+        # Roles
+        {value: CREATE_ROLE}
+        {value: READ_ROLE_OWN}
+        {value: UPDATE_ROLE_OWN}
+        {value: TRASH_ROLE_OWN}
+        {value: DELETE_ROLE_OWN}
+
+        {value: READ_ROLE_OTHERS}
+        {value: UPDATE_ROLE_OTHERS}
+        {value: TRASH_ROLE_OTHERS}
+        {value: DELETE_ROLE_OTHERS}
+
+        # Users
+        {value: CREATE_USER}
+        {value: READ_USER_CREATED}
+        {value: UPDATE_USER_CREATED}
+        {value: TRASH_USER_CREATED}
+        {value: DELETE_USER_CREATED}
+
+        {value: READ_USER_SAME_LEVEL}
+        {value: UPDATE_USER_SAME_LEVEL}
+        {value: TRASH_USER_SAME_LEVEL}
+        {value: DELETE_USER_SAME_LEVEL}
+        {value: IMPERSONATE_USER_SAME_LEVEL}
+
+        {value: READ_USER_ABOVE_LEVEL}
+        {value: UPDATE_USER_ABOVE_LEVEL}
+        {value: TRASH_USER_ABOVE_LEVEL}
+        {value: DELETE_USER_ABOVE_LEVEL}
+        {value: IMPERSONATE_USER_ABOVE_LEVEL}
+
+        {value: READ_USER_BELOW_LEVEL}
+        {value: UPDATE_USER_BELOW_LEVEL}
+        {value: TRASH_USER_BELOW_LEVEL}
+        {value: DELETE_USER_BELOW_LEVEL}
+        {value: IMPERSONATE_USER_BELOW_LEVEL}
+
+        # Sessions
+        {value: READ_SESSION_OWN}
+        {value: UPDATE_SESSION_OWN}
+        {value: DELETE_SESSION_OWN}
+
+        # Slugs
+        {value: CREATE_SLUG}
+        {value: READ_SLUG_OWN}
+        {value: UPDATE_SLUG_OWN}
+        {value: TRASH_SLUG_OWN}
+        {value: DELETE_SLUG_OWN}
+
+        {value: READ_SLUG_OTHERS}
+        {value: UPDATE_SLUG_OTHERS}
+        {value: TRASH_SLUG_OTHERS}
+        {value: DELETE_SLUG_OTHERS}
+
+        # Entries
         {value: CREATE_ENTRY}
         {value: READ_ENTRY_OWN}
         {value: UPDATE_ENTRY_OWN}
+        {value: TRASH_ENTRY_OWN}
         {value: DELETE_ENTRY_OWN}
+
         {value: READ_ENTRY_OTHERS}
         {value: UPDATE_ENTRY_OTHERS}
+        {value: TRASH_ENTRY_OTHERS}
         {value: DELETE_ENTRY_OTHERS}
+
+        # Categories
+        {value: CREATE_CATEGORY}
+        {value: READ_CATEGORY_OWN}
+        {value: UPDATE_CATEGORY_OWN}
+        {value: TRASH_CATEGORY_OWN}
+        {value: DELETE_CATEGORY_OWN}
+
+        {value: READ_CATEGORY_OTHERS}
+        {value: UPDATE_CATEGORY_OTHERS}
+        {value: TRASH_CATEGORY_OTHERS}
+        {value: DELETE_CATEGORY_OTHERS}
       ]
     }
     children: {

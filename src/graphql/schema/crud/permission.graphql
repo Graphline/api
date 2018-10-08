@@ -9,5 +9,5 @@ type Permission implements Crud {
   display:   String!
   trashed:   Boolean!
 
-  value: String!
+  value: PermissionValue!
 }

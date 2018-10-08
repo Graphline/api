@@ -16,6 +16,7 @@
 #
 # import {Session} from 'src/graphql/schema/managed/session.graphql'
 # import {User} from 'src/graphql/schema/managed/user.graphql'
+# import {Event} from 'src/graphql/schema/managed/event.graphql'
 
 type Schema {
   query:        Query!

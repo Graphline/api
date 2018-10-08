@@ -42,7 +42,7 @@ export const reader = async ({
   if (viewer && item.trashed) {
     log.silly('viewer exists, checking user permissions')
 
-    // If we're logged in, that means the item is trashed so we need to check
+    // If we're logged in and the item is trashed, we need to check
     // for permission
     const owns = await viewer.owns(item, method)
     const permissions = await viewer.permissions()
