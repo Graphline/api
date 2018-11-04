@@ -10,6 +10,7 @@ type Slug {
   trashed:   Boolean! @default(value: "false")
 
   value: String! @unique
+  entry: Entry
 }
 
 # Crud & Routable & Publishable

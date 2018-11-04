@@ -1,7 +1,13 @@
 import {reader,} from '~/graphql/helpers/read-crud'
 import {fields as crud,} from '~/graphql/types/interfaces/crud'
 
-export const fields = crud('slug')
+export const fields = {
+  ...crud('slug'),
+
+  entry ({id,}, data, {prisma,}) {
+    return prisma.slug({id,}).entry()
+  },
+}
 
 export const name = 'Slug'
 export const query = 'slug'

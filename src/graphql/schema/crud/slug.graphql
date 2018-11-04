@@ -16,4 +16,5 @@ type Slug implements Crud {
   trashed:   Boolean!
 
   value: String!
+  entry: Entry
 }
